@@ -90,6 +90,7 @@ body{
 .empty-image{
     width: 250px;
     height: 250px;
+    margin-left: 40px;
 }
 
 .todos-container{
@@ -127,9 +128,12 @@ body{
     border: 2px solid rgba(255,255,255,0.3);
     background: transparent;
     border-radius: 50%;
-    appearance: none;
+    /* appearance: none;
+    -webkit-appearance: none; */
     cursor: pointer;
     transition: all 0.2s ease;
+    position: relative;
+    display: inline-block;
 }
 
 #task-list li.checkbox:checked
@@ -140,12 +144,14 @@ body{
 }
 
 #task-list li.checkbox:checked::before{
-    content: '\2713';
+    content: '\2713'; /* Unicode for check mark ✓ */
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    font-weight: bold;
 
 }
 
@@ -189,3 +195,13 @@ body{
     background: rgb(153, 12, 12);
 }
 
+.edit-input {
+    flex: 1;
+    padding: 10px 17px;
+    font-size: 1.1rem;
+    border: none;
+    outline: none;
+    border-radius: 22px;
+    background: rgba(255,255,255,0.18);
+    color: #dbdbdb;
+}
