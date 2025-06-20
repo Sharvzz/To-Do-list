@@ -15,8 +15,22 @@ document.addEventListener('DOMContentLoaded',()=>{
             return;
         }
         const taskItem = document.createElement('li');
-        taskItem.textContent = taskText;
+        taskItem.innerHTML = `
+        <input type="checkbox" class="checkbox">
+        <span>${taskText}</span>
+        <div class="task-buttons">
+            <button class="edit-btn">
+                <i class="fa-solid fa-pen"></i>
+            </button>
+            <button class="delete-btn">
+                <i class="fa-solid fa-trash"></i>
+            </button>
+        </div>
+
+
+        `;
         taskList.appendChild(taskItem);
+        // taskItem.textContent = taskText;
         taskInput.value = '';
         toggleEmptyImage();
     }
